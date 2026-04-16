@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Your Name</title>
+    <title>Blog | Your Name | Data Analyst</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,35 +11,45 @@
         <header>
             <div class="nav-container">
                 <h1>YOUR NAME</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="blog.html" class="active">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+                <div class="right-nav">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="blog.html" class="active">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 12.728L12 12m0 0l-4-4m4 4l4 4m-4-4l-4 4m4-4l-4 4" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </header>
 
         <main>
             <section id="blog">
-                <h2>Blog</h2>
+                <h2>Data Analysis Blog</h2>
                 <ul class="blog-list">
                     <li class="blog-item">
                         <span class="date">Oct 12, 2025</span>
-                        <h3><a href="blog-post.html">Why Minimalism in UI Design Matters</a></h3>
-                        <p>Exploring the benefits of simplicity and whitespace in modern web development.</p>
+                        <h3><a href="blog-post.html">The Art of Data Storytelling</a></h3>
+                        <p>How to communicate complex findings effectively to non-technical stakeholders.</p>
                     </li>
                     <li class="blog-item">
                         <span class="date">Aug 05, 2025</span>
-                        <h3><a href="#">Setting Up a Fast Development Workflow</a></h3>
-                        <p>Tips and tricks for boosting productivity with modern CLI tools and automation.</p>
+                        <h3><a href="#">SQL Best Practices for Large Scale Data Analysis</a></h3>
+                        <p>Tips for writing efficient and readable SQL queries for massive datasets.</p>
                     </li>
                     <li class="blog-item">
                         <span class="date">Jun 20, 2025</span>
-                        <h3><a href="#">The Future of Vanilla JavaScript</a></h3>
-                        <p>Discussing the new features of ECMAScript and why you might not need a framework.</p>
+                        <h3><a href="#">Why Python is Essential for the Modern Data Analyst</a></h3>
+                        <p>Exploring the powerful ecosystem of libraries that make Python a must-have skill.</p>
                     </li>
                 </ul>
             </section>

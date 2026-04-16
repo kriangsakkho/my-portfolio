@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Your Name</title>
+    <title>Projects | Your Name | Data Analyst</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,43 +11,53 @@
         <header>
             <div class="nav-container">
                 <h1>YOUR NAME</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">About</a></li>
-                        <li><a href="projects.html" class="active">Projects</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+                <div class="right-nav">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">About</a></li>
+                            <li><a href="projects.html" class="active">Projects</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 12.728L12 12m0 0l-4-4m4 4l4 4m-4-4l-4 4m4-4l-4 4" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </header>
 
         <main>
             <section id="projects">
-                <h2>Projects</h2>
+                <h2>Data Analysis Projects</h2>
                 <div class="grid">
                     <div class="card">
-                        <h3>Project One</h3>
-                        <p>A web application built with [Technology Stack] that helps users with [Main Purpose]. Focused on [Key Achievement].</p>
-                        <a href="#" target="_blank">View Live Demo</a> | <a href="#" target="_blank">Source Code</a>
+                        <h3>Customer Churn Prediction</h3>
+                        <p>Developed a machine learning model using Python to predict customer churn for a subscription service. Performed exploratory data analysis (EDA) and feature engineering to identify key risk factors.</p>
+                        <a href="#" target="_blank">View Notebook</a> | <a href="#" target="_blank">Case Study</a>
                     </div>
 
                     <div class="card">
-                        <h3>Project Two</h3>
-                        <p>A command-line tool written in [Language] that simplifies [Workflow]. Used by [Target Audience].</p>
+                        <h3>Sales Performance Dashboard</h3>
+                        <p>Interactive Tableau dashboard visualizing sales trends, regional performance, and product profitability across several years. Integrated multiple data sources using SQL for automated updates.</p>
+                        <a href="#" target="_blank">View Dashboard</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>Inventory Optimization Analysis</h3>
+                        <p>A statistical study on inventory levels using R. Applied time-series forecasting to predict future demand and optimized reorder points, resulting in a 10% reduction in stockouts.</p>
                         <a href="#" target="_blank">View Repository</a>
                     </div>
 
                     <div class="card">
-                        <h3>Project Three</h3>
-                        <p>Open-source library for [Specific Use Case]. Features include [Main Feature 1], [Main Feature 2], and [Main Feature 3].</p>
-                        <a href="#" target="_blank">View Docs</a> | <a href="#" target="_blank">View on NPM/GitHub</a>
-                    </div>
-
-                    <div class="card">
-                        <h3>Project Four</h3>
-                        <p>Minimalistic CSS framework designed for readability and simplicity. No external dependencies, just pure CSS.</p>
-                        <a href="#" target="_blank">View Playground</a> | <a href="#" target="_blank">View Source</a>
+                        <h3>Social Media Sentiment Analysis</h3>
+                        <p>Scraped and analyzed millions of tweets using Python and NLP techniques to gauge public sentiment toward major brands. Visualized findings in Power BI.</p>
+                        <a href="#" target="_blank">Read Analysis</a>
                     </div>
                 </div>
             </section>

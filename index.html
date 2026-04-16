@@ -3,35 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kriangsak | Portfolio</title>
+    <title>Your Name | Data Analyst Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
         <header>
             <div class="nav-container">
-                <h1>Kriangsak Khongsri</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html" class="active">About Me</a></li>
-                        <li><a href="projects.html">My Projects</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact Me</a></li>
-                    </ul>
-                </nav>
+                <h1>YOUR NAME</h1>
+                <div class="right-nav">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html" class="active">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <!-- Moon Icon (for Light Mode) -->
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <!-- Sun Icon (for Dark Mode) -->
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 12.728L12 12m0 0l-4-4m4 4l4 4m-4-4l-4 4m4-4l4-4" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </header>
 
         <main>
             <section class="hero">
-                <h2>I build minimal and functional web experiences.</h2>
-                <p class="lead">Software Engineer based in [Your City]. Passionate about clean code, performance, and user-centric design.</p>
+                <h2>I turn complex data into actionable insights.</h2>
+                <p class="lead">Data Analyst based in [Your City]. Specialized in SQL, Python, and data storytelling to drive business decisions.</p>
             </section>
 
             <section id="about">
                 <h2>About Me</h2>
-                <p>Hello! I'm a software engineer with a background in [Your Background]. I enjoy solving complex problems and turning ideas into reality through code.</p>
-                <p>In my free time, I love contributing to open-source projects, writing about technology, and exploring new frameworks.</p>
+                <p>Hello! I'm a Data Analyst with a background in [Your Background]. I have a passion for uncovering trends and patterns within large datasets and communicating findings to both technical and non-technical stakeholders.</p>
+                <p>My toolkit includes SQL for data extraction, Python (Pandas, NumPy, Scikit-learn) for analysis and modeling, and visualization tools like Tableau and Power BI.</p>
             </section>
 
             <section id="experience">
@@ -39,23 +51,23 @@
                 
                 <div class="resume-item">
                     <span class="date">2022 — Present</span>
-                    <h3>Senior Developer</h3>
-                    <span class="role">Tech Company Inc.</span>
-                    <p>Lead developer for the core platform, focused on improving scalability and performance. Mentored junior engineers and implemented best practices for CI/CD.</p>
+                    <h3>Senior Data Analyst</h3>
+                    <span class="role">Retail Insights Corp.</span>
+                    <p>Optimized supply chain operations by identifying bottlenecks through predictive modeling, resulting in a 15% reduction in logistics costs. Developed automated dashboards used by executive leadership for daily decision-making.</p>
                 </div>
 
                 <div class="resume-item">
                     <span class="date">2020 — 2022</span>
-                    <h3>Full Stack Engineer</h3>
-                    <span class="role">Startup X</span>
-                    <p>Designed and built various features for the main web application using React and Node.js. Collaborated closely with designers to ensure high-quality UI/UX.</p>
+                    <h3>Data Analyst</h3>
+                    <span class="role">FinTech Solutions</span>
+                    <p>Analyzed customer behavior data to improve retention strategies. Performed A/B testing on marketing campaigns, leading to a 20% increase in conversion rates. Ensured data integrity across multiple financial databases.</p>
                 </div>
 
                 <div class="resume-item">
                     <span class="date">2018 — 2020</span>
-                    <h3>Junior Web Developer</h3>
-                    <span class="role">Agency Y</span>
-                    <p>Developed responsive websites for various clients. Gained experience in HTML, CSS, JavaScript, and WordPress development.</p>
+                    <h3>Junior Data Analyst</h3>
+                    <span class="role">Health Data Group</span>
+                    <p>Assisted in the cleaning and preparation of large healthcare datasets for clinical research. Generated weekly reports on patient outcome metrics and assisted in the migration of legacy data to a modern cloud-based warehouse.</p>
                 </div>
             </section>
         </main>
