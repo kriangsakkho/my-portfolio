@@ -1,27 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Portfolio website loaded successfully.');
-    
-    // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    
-    // Check for saved theme in localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
+// Theme Toggle Logic
+const themeStorageKey = 'portfolio-theme';
+
+const applyTheme = (theme) => {
+    if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
     }
+};
+
+// Immediately check for saved theme
+try {
+    const savedTheme = localStorage.getItem(themeStorageKey);
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        applyTheme('dark');
+    }
+} catch (e) {
+    console.warn('LocalStorage not accessible during initial theme check:', e);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Portfolio website loaded. Checking for theme toggle...');
+    
+    const themeToggle = document.getElementById('theme-toggle');
     
     if (themeToggle) {
+        console.log('Theme toggle button found.');
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
+            const isDarkMode = document.documentElement.classList.toggle('dark');
+            const theme = isDarkMode ? 'dark' : 'light';
             
-            // Save preference to localStorage
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
+            try {
+                localStorage.setItem(themeStorageKey, theme);
+                console.log('Theme changed to:', theme);
+            } catch (e) {
+                console.error('Could not save theme preference:', e);
             }
         });
+    } else {
+        console.warn('Theme toggle button NOT found on this page.');
     }
 
     // Smooth scrolling for anchor links

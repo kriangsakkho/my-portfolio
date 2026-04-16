@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name | Data Analyst Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Inline script to prevent theme flash -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('portfolio-theme');
+                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
     <div class="container">
@@ -21,13 +32,13 @@
                         </ul>
                     </nav>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                        <!-- Moon Icon (for Light Mode) -->
+                        <!-- Moon Icon -->
                         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
-                        <!-- Sun Icon (for Dark Mode) -->
+                        <!-- Sun Icon -->
                         <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 12.728L12 12m0 0l-4-4m4 4l4 4m-4-4l-4 4m4-4l4-4" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 12.728l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
                         </svg>
                     </button>
                 </div>
