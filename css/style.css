@@ -10,7 +10,12 @@
     --max-width: 800px;
     --font-main: 'JetBrains Mono', monospace;
     --font-mono: 'JetBrains Mono', monospace;
+    --font-thai: 'Kanit', sans-serif;
     --spacing: 1.5rem;
+}
+
+html[lang="th"] {
+    --font-main: var(--font-thai);
 }
 
 html.dark {
@@ -73,7 +78,7 @@ header h1 {
 }
 
 /* Theme Toggle */
-.theme-toggle {
+.theme-toggle, .lang-toggle {
     background: none;
     border: none;
     cursor: pointer;
@@ -83,9 +88,12 @@ header h1 {
     align-items: center;
     justify-content: center;
     transition: color 0.2s ease;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.9rem;
 }
 
-.theme-toggle:hover {
+.theme-toggle:hover, .lang-toggle:hover {
     color: var(--accent-color);
 }
 

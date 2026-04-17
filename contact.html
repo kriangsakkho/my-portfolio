@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Your Name | Data Analyst</title>
+    <title data-en="Contact | Your Name | Data Analyst" data-th="ติดต่อ | ชื่อของคุณ | นักวิเคราะห์ข้อมูล">Contact | Your Name | Data Analyst</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
     <script>
         (function() {
             try {
@@ -15,6 +15,8 @@
                 if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.documentElement.classList.add('dark');
                 }
+                var lang = localStorage.getItem('portfolio-lang') || 'en';
+                document.documentElement.setAttribute('lang', lang);
             } catch (e) {}
         })();
     </script>
@@ -23,16 +25,19 @@
     <div class="container">
         <header>
             <div class="nav-container">
-                <h1>YOUR NAME</h1>
+                <h1 data-en="YOUR NAME" data-th="ชื่อของคุณ">YOUR NAME</h1>
                 <div class="right-nav">
                     <nav>
                         <ul>
-                            <li><a href="index.html">About</a></li>
-                            <li><a href="projects.html">Projects</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html" class="active">Contact</a></li>
+                            <li><a href="index.html" data-en="About" data-th="เกี่ยวกับ">About</a></li>
+                            <li><a href="projects.html" data-en="Projects" data-th="โปรเจกต์">Projects</a></li>
+                            <li><a href="blog.html" data-en="Blog" data-th="บล็อก">Blog</a></li>
+                            <li><a href="contact.html" class="active" data-en="Contact" data-th="ติดต่อ">Contact</a></li>
                         </ul>
                     </nav>
+                    <button id="lang-toggle" class="lang-toggle" aria-label="Switch Language">
+                        EN / TH
+                    </button>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -47,21 +52,21 @@
 
         <main>
             <section id="contact">
-                <h2>Contact Me</h2>
-                <p>I'm always open to discussing new data projects, analytical challenges, or opportunities to help your team make better decisions with data.</p>
-                <p>Feel free to reach out via email or connect with me on social media.</p>
+                <h2 data-en="Contact Me" data-th="ติดต่อฉัน">Contact Me</h2>
+                <p data-en="I'm always open to discussing new data projects, analytical challenges, or opportunities to help your team make better decisions with data." data-th="ผมเปิดรับการพูดคุยเกี่ยวกับโปรเจกต์ข้อมูลใหม่ๆ ความท้าทายในการวิเคราะห์ หรือโอกาสในการช่วยทีมของคุณตัดสินใจได้ดีขึ้นด้วยข้อมูลเสมอ">I'm always open to discussing new data projects, analytical challenges, or opportunities to help your team make better decisions with data.</p>
+                <p data-en="Feel free to reach out via email or connect with me on social media." data-th="ติดต่อผมได้ทางอีเมลหรือเชื่อมต่อกับผมผ่านโซเชียลมีเดีย">Feel free to reach out via email or connect with me on social media.</p>
                 
                 <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 1rem;"><strong>Email:</strong> <a href="mailto:yourname@example.com">yourname@example.com</a></li>
-                    <li style="margin-bottom: 1rem;"><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-                    <li style="margin-bottom: 1rem;"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></li>
-                    <li style="margin-bottom: 1rem;"><strong>Tableau:</strong> <a href="#" target="_blank">public.tableau.com/profile/yourname</a></li>
+                    <li style="margin-bottom: 1rem;"><strong data-en="Email:" data-th="อีเมล:">Email:</strong> <a href="mailto:yourname@example.com">yourname@example.com</a></li>
+                    <li style="margin-bottom: 1rem;"><strong data-en="GitHub:" data-th="GitHub:">GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+                    <li style="margin-bottom: 1rem;"><strong data-en="LinkedIn:" data-th="LinkedIn:">LinkedIn:</strong> <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></li>
+                    <li style="margin-bottom: 1rem;"><strong data-en="Tableau:" data-th="Tableau:">Tableau:</strong> <a href="#" target="_blank">public.tableau.com/profile/yourname</a></li>
                 </ul>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2026 Your Name. Built with HTML, CSS, and JS.</p>
+            <p data-en="&copy; 2026 Your Name. Built with HTML, CSS, and JS." data-th="&copy; 2026 ชื่อของคุณ สร้างด้วย HTML, CSS และ JS.">&copy; 2026 Your Name. Built with HTML, CSS, and JS.</p>
         </footer>
     </div>
     <script src="js/main.js"></script>

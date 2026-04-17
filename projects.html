@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Your Name | Data Analyst</title>
+    <title data-en="Projects | Your Name | Data Analyst" data-th="โปรเจกต์ | ชื่อของคุณ | นักวิเคราะห์ข้อมูล">Projects | Your Name | Data Analyst</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
     <script>
         (function() {
             try {
@@ -15,6 +15,8 @@
                 if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.documentElement.classList.add('dark');
                 }
+                var lang = localStorage.getItem('portfolio-lang') || 'en';
+                document.documentElement.setAttribute('lang', lang);
             } catch (e) {}
         })();
     </script>
@@ -23,16 +25,19 @@
     <div class="container">
         <header>
             <div class="nav-container">
-                <h1>YOUR NAME</h1>
+                <h1 data-en="YOUR NAME" data-th="ชื่อของคุณ">YOUR NAME</h1>
                 <div class="right-nav">
                     <nav>
                         <ul>
-                            <li><a href="index.html">About</a></li>
-                            <li><a href="projects.html" class="active">Projects</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="index.html" data-en="About" data-th="เกี่ยวกับ">About</a></li>
+                            <li><a href="projects.html" class="active" data-en="Projects" data-th="โปรเจกต์">Projects</a></li>
+                            <li><a href="blog.html" data-en="Blog" data-th="บล็อก">Blog</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-th="ติดต่อ">Contact</a></li>
                         </ul>
                     </nav>
+                    <button id="lang-toggle" class="lang-toggle" aria-label="Switch Language">
+                        EN / TH
+                    </button>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -47,37 +52,37 @@
 
         <main>
             <section id="projects">
-                <h2>Data Analysis Projects</h2>
+                <h2 data-en="Data Analysis Projects" data-th="โปรเจกต์การวิเคราะห์ข้อมูล">Data Analysis Projects</h2>
                 <div class="grid">
                     <div class="card">
-                        <h3>Customer Churn Prediction</h3>
-                        <p>Developed a machine learning model using Python to predict customer churn for a subscription service. Performed exploratory data analysis (EDA) and feature engineering to identify key risk factors.</p>
-                        <a href="#" target="_blank">View Notebook</a> | <a href="#" target="_blank">Case Study</a>
+                        <h3 data-en="Customer Churn Prediction" data-th="การคาดการณ์การยกเลิกบริการของลูกค้า">Customer Churn Prediction</h3>
+                        <p data-en="Developed a machine learning model using Python to predict customer churn for a subscription service. Performed exploratory data analysis (EDA) and feature engineering to identify key risk factors." data-th="พัฒนาแบบจำลองการเรียนรู้ของเครื่องโดยใช้ Python เพื่อคาดการณ์การยกเลิกสมาชิกสำหรับบริการแบบบอกรับสมาชิก ทำการวิเคราะห์ข้อมูลเชิงสำรวจ (EDA) และวิศวกรรมฟีเจอร์เพื่อระบุปัจจัยเสี่ยงที่สำคัญ">Developed a machine learning model using Python to predict customer churn for a subscription service. Performed exploratory data analysis (EDA) and feature engineering to identify key risk factors.</p>
+                        <a href="#" target="_blank" data-en="View Notebook" data-th="ดูสมุดบันทึก">View Notebook</a> | <a href="#" target="_blank" data-en="Case Study" data-th="กรณีศึกษา">Case Study</a>
                     </div>
 
                     <div class="card">
-                        <h3>Sales Performance Dashboard</h3>
-                        <p>Interactive Tableau dashboard visualizing sales trends, regional performance, and product profitability across several years. Integrated multiple data sources using SQL for automated updates.</p>
-                        <a href="#" target="_blank">View Dashboard</a>
+                        <h3 data-en="Sales Performance Dashboard" data-th="แดชบอร์ดประสิทธิภาพการขาย">Sales Performance Dashboard</h3>
+                        <p data-en="Interactive Tableau dashboard visualizing sales trends, regional performance, and product profitability across several years. Integrated multiple data sources using SQL for automated updates." data-th="แดชบอร์ด Tableau แบบโต้ตอบที่แสดงภาพแนวโน้มการขาย ประสิทธิภาพตามภูมิภาค และความสามารถในการทำกำไรของผลิตภัณฑ์ในช่วงเวลาหลายปี รวมแหล่งข้อมูลหลายแห่งโดยใช้ SQL สำหรับการอัปเดตอัตโนมัติ">Interactive Tableau dashboard visualizing sales trends, regional performance, and product profitability across several years. Integrated multiple data sources using SQL for automated updates.</p>
+                        <a href="#" target="_blank" data-en="View Dashboard" data-th="ดูแดชบอร์ด">View Dashboard</a>
                     </div>
 
                     <div class="card">
-                        <h3>Inventory Optimization Analysis</h3>
-                        <p>A statistical study on inventory levels using R. Applied time-series forecasting to predict future demand and optimized reorder points, resulting in a 10% reduction in stockouts.</p>
-                        <a href="#" target="_blank">View Repository</a>
+                        <h3 data-en="Inventory Optimization Analysis" data-th="การวิเคราะห์การเพิ่มประสิทธิภาพสินค้าคงคลัง">Inventory Optimization Analysis</h3>
+                        <p data-en="A statistical study on inventory levels using R. Applied time-series forecasting to predict future demand and optimized reorder points, resulting in a 10% reduction in stockouts." data-th="การศึกษาทางสถิติเกี่ยวกับระดับสินค้าคงคลังโดยใช้ R ใช้การคาดการณ์อนุกรมเวลาเพื่อทำนายความต้องการในอนาคตและเพิ่มประสิทธิภาพจุดสั่งซื้อใหม่ ส่งผลให้สินค้าขาดสต็อกลดลง 10%">A statistical study on inventory levels using R. Applied time-series forecasting to predict future demand and optimized reorder points, resulting in a 10% reduction in stockouts.</p>
+                        <a href="#" target="_blank" data-en="View Repository" data-th="ดูคลังรหัสผ่าน">View Repository</a>
                     </div>
 
                     <div class="card">
-                        <h3>Social Media Sentiment Analysis</h3>
-                        <p>Scraped and analyzed millions of tweets using Python and NLP techniques to gauge public sentiment toward major brands. Visualized findings in Power BI.</p>
-                        <a href="#" target="_blank">Read Analysis</a>
+                        <h3 data-en="Social Media Sentiment Analysis" data-th="การวิเคราะห์ความรู้สึกจากโซเชียลมีเดีย">Social Media Sentiment Analysis</h3>
+                        <p data-en="Scraped and analyzed millions of tweets using Python and NLP techniques to gauge public sentiment toward major brands. Visualized findings in Power BI." data-th="รวบรวมและวิเคราะห์ทวีตหลายล้านรายการโดยใช้ Python และเทคนิค NLP เพื่อวัดความรู้สึกของสาธารณะต่อแบรนด์หลักๆ แสดงผลลัพธ์ใน Power BI">Scraped and analyzed millions of tweets using Python and NLP techniques to gauge public sentiment toward major brands. Visualized findings in Power BI.</p>
+                        <a href="#" target="_blank" data-en="Read Analysis" data-th="อ่านบทวิเคราะห์">Read Analysis</a>
                     </div>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2026 Your Name. Built with HTML, CSS, and JS.</p>
+            <p data-en="&copy; 2026 Your Name. Built with HTML, CSS, and JS." data-th="&copy; 2026 ชื่อของคุณ สร้างด้วย HTML, CSS และ JS.">&copy; 2026 Your Name. Built with HTML, CSS, and JS.</p>
         </footer>
     </div>
     <script src="js/main.js"></script>

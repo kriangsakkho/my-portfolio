@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post | Your Name | Data Analyst</title>
+    <title data-en="Blog Post | Your Name | Data Analyst" data-th="โพสต์บล็อก | ชื่อของคุณ | นักวิเคราะห์ข้อมูล">Blog Post | Your Name | Data Analyst</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
     <script>
         (function() {
             try {
@@ -15,6 +15,8 @@
                 if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.documentElement.classList.add('dark');
                 }
+                var lang = localStorage.getItem('portfolio-lang') || 'en';
+                document.documentElement.setAttribute('lang', lang);
             } catch (e) {}
         })();
     </script>
@@ -23,16 +25,19 @@
     <div class="container">
         <header>
             <div class="nav-container">
-                <h1>YOUR NAME</h1>
+                <h1 data-en="YOUR NAME" data-th="ชื่อของคุณ">YOUR NAME</h1>
                 <div class="right-nav">
                     <nav>
                         <ul>
-                            <li><a href="index.html">About</a></li>
-                            <li><a href="projects.html">Projects</a></li>
-                            <li><a href="blog.html" class="active">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="index.html" data-en="About" data-th="เกี่ยวกับ">About</a></li>
+                            <li><a href="projects.html" data-en="Projects" data-th="โปรเจกต์">Projects</a></li>
+                            <li><a href="blog.html" class="active" data-en="Blog" data-th="บล็อก">Blog</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-th="ติดต่อ">Contact</a></li>
                         </ul>
                     </nav>
+                    <button id="lang-toggle" class="lang-toggle" aria-label="Switch Language">
+                        EN / TH
+                    </button>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -48,34 +53,34 @@
         <main>
             <article>
                 <header class="post-header">
-                    <span class="date" style="font-family: var(--font-mono); color: var(--text-secondary);">October 12, 2025</span>
-                    <h2 style="margin-top: 0.5rem; font-size: 2.2rem;">The Art of Data Storytelling</h2>
+                    <span class="date" data-en="October 12, 2025" data-th="12 ตุลาคม 2025" style="font-family: var(--font-mono); color: var(--text-secondary);">October 12, 2025</span>
+                    <h2 data-en="The Art of Data Storytelling" data-th="ศิลปะแห่งการเล่าเรื่องด้วยข้อมูล" style="margin-top: 0.5rem; font-size: 2.2rem;">The Art of Data Storytelling</h2>
                 </header>
                 
                 <div class="post-content" style="margin-top: 3rem;">
-                    <p>Data without a story is just a collection of numbers. As data analysts, our job isn't just to find the answer, but to communicate it in a way that drives action.</p>
+                    <p data-en="Data without a story is just a collection of numbers. As data analysts, our job isn't just to find the answer, but to communicate it in a way that drives action." data-th="ข้อมูลที่ไม่มีเรื่องราวก็เป็นเพียงแค่กลุ่มตัวเลข ในฐานะนักวิเคราะห์ข้อมูล งานของเราไม่ใช่แค่การค้นหาคำตอบ แต่คือการสื่อสารในรูปแบบที่ขับเคลื่อนให้เกิดการลงมือทำ">Data without a story is just a collection of numbers. As data analysts, our job isn't just to find the answer, but to communicate it in a way that drives action.</p>
                     
-                    <h3>Context is King</h3>
-                    <p>Before diving into charts and graphs, it's crucial to understand the "why" behind the analysis. What business problem are we trying to solve? Who is the audience? Tailoring the message to the stakeholder is key.</p>
+                    <h3 data-en="Context is King" data-th="บริบทคือหัวใจสำคัญ">Context is King</h3>
+                    <p data-en="Before diving into charts and graphs, it's crucial to understand the 'why' behind the analysis. What business problem are we trying to solve? Who is the audience? Tailoring the message to the stakeholder is key." data-th="ก่อนจะดำดิ่งลงไปในแผนภูมิและกราฟ สิ่งสำคัญคือต้องเข้าใจ 'เหตุผล' เบื้องหลังการวิเคราะห์ ปัญหาทางธุรกิจที่เราพยายามแก้ไขคืออะไร? ใครคือกลุ่มเป้าหมาย? การปรับแต่งข้อความให้เหมาะกับผู้มีส่วนได้ส่วนเสียคือหัวใจสำคัญ">Before diving into charts and graphs, it's crucial to understand the "why" behind the analysis. What business problem are we trying to solve? Who is the audience? Tailoring the message to the stakeholder is key.</p>
                     
-                    <h3>Simplify the Complex</h3>
-                    <p>The best visualizations are the ones that require the least explanation. Use whitespace, clear labeling, and intuitive color schemes to guide the viewer's eye to the most important insights.</p>
+                    <h3 data-en="Simplify the Complex" data-th="ทำให้เรื่องยากเป็นเรื่องง่าย">Simplify the Complex</h3>
+                    <p data-en="The best visualizations are the ones that require the least explanation. Use whitespace, clear labeling, and intuitive color schemes to guide the viewer's eye to the most important insights." data-th="การนำเสนอข้อมูลภาพที่ดีที่สุดคือสิ่งที่มีการอธิบายให้น้อยที่สุด ใช้พื้นที่ว่าง การติดฉลากที่ชัดเจน และโทนสีที่เข้าใจง่ายเพื่อดึงดูดสายตาของผู้ชมไปยังข้อมูลเชิงลึกที่สำคัญที่สุด">The best visualizations are the ones that require the least explanation. Use whitespace, clear labeling, and intuitive color schemes to guide the viewer's eye to the most important insights.</p>
                     
-                    <blockquote>
+                    <blockquote data-en="&ldquo;The goal is to turn data into information, and information into insight.&rdquo; &mdash; Carly Fiorina" data-th="&ldquo;เป้าหมายคือการเปลี่ยนข้อมูลให้เป็นสารสนเทศ และเปลี่ยนสารสนเทศให้เป็นข้อมูลเชิงลึก&rdquo; &mdash; Carly Fiorina">
                         "The goal is to turn data into information, and information into insight." — Carly Fiorina
                     </blockquote>
                     
-                    <p>As the volume of data continues to grow, the ability to tell compelling stories with that data will become an increasingly valuable skill for any analyst.</p>
+                    <p data-en="As the volume of data continues to grow, the ability to tell compelling stories with that data will become an increasingly valuable skill for any analyst." data-th="เมื่อปริมาณข้อมูลเติบโตขึ้นอย่างต่อเนื่อง ความสามารถในการเล่าเรื่องราวที่น่าสนใจด้วยข้อมูลนั้นจะกลายเป็นทักษะที่มีคุณค่ามากขึ้นสำหรับนักวิเคราะห์ทุกคน">As the volume of data continues to grow, the ability to tell compelling stories with that data will become an increasingly valuable skill for any analyst.</p>
                 </div>
                 
                 <footer style="margin-top: 4rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-                    <a href="blog.html">&larr; Back to all posts</a>
+                    <a href="blog.html" data-en="&larr; Back to all posts" data-th="&larr; กลับไปยังโพสต์ทั้งหมด">&larr; Back to all posts</a>
                 </footer>
             </article>
         </main>
 
         <footer>
-            <p>&copy; 2026 Your Name. Built with HTML, CSS, and JS.</p>
+            <p data-en="&copy; 2026 Your Name. Built with HTML, CSS, and JS." data-th="&copy; 2026 ชื่อของคุณ สร้างด้วย HTML, CSS และ JS.">&copy; 2026 Your Name. Built with HTML, CSS, and JS.</p>
         </footer>
     </div>
     <script src="js/main.js"></script>

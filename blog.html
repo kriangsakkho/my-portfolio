@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Your Name | Data Analyst</title>
+    <title data-en="Blog | Your Name | Data Analyst" data-th="บล็อก | ชื่อของคุณ | นักวิเคราะห์ข้อมูล">Blog | Your Name | Data Analyst</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
     <script>
         (function() {
             try {
@@ -15,6 +15,8 @@
                 if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.documentElement.classList.add('dark');
                 }
+                var lang = localStorage.getItem('portfolio-lang') || 'en';
+                document.documentElement.setAttribute('lang', lang);
             } catch (e) {}
         })();
     </script>
@@ -23,16 +25,19 @@
     <div class="container">
         <header>
             <div class="nav-container">
-                <h1>YOUR NAME</h1>
+                <h1 data-en="YOUR NAME" data-th="ชื่อของคุณ">YOUR NAME</h1>
                 <div class="right-nav">
                     <nav>
                         <ul>
-                            <li><a href="index.html">About</a></li>
-                            <li><a href="projects.html">Projects</a></li>
-                            <li><a href="blog.html" class="active">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="index.html" data-en="About" data-th="เกี่ยวกับ">About</a></li>
+                            <li><a href="projects.html" data-en="Projects" data-th="โปรเจกต์">Projects</a></li>
+                            <li><a href="blog.html" class="active" data-en="Blog" data-th="บล็อก">Blog</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-th="ติดต่อ">Contact</a></li>
                         </ul>
                     </nav>
+                    <button id="lang-toggle" class="lang-toggle" aria-label="Switch Language">
+                        EN / TH
+                    </button>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -47,29 +52,29 @@
 
         <main>
             <section id="blog">
-                <h2>Data Analysis Blog</h2>
+                <h2 data-en="Data Analysis Blog" data-th="บล็อกการวิเคราะห์ข้อมูล">Data Analysis Blog</h2>
                 <ul class="blog-list">
                     <li class="blog-item">
-                        <span class="date">Oct 12, 2025</span>
-                        <h3><a href="blog-post.html">The Art of Data Storytelling</a></h3>
-                        <p>How to communicate complex findings effectively to non-technical stakeholders.</p>
+                        <span class="date" data-en="Oct 12, 2025" data-th="12 ต.ค. 2025">Oct 12, 2025</span>
+                        <h3><a href="blog-post.html" data-en="The Art of Data Storytelling" data-th="ศิลปะแห่งการเล่าเรื่องด้วยข้อมูล">The Art of Data Storytelling</a></h3>
+                        <p data-en="How to communicate complex findings effectively to non-technical stakeholders." data-th="วิธีสื่อสารผลลัพธ์ที่ซับซ้อนอย่างมีประสิทธิภาพให้กับผู้มีส่วนได้ส่วนเสียที่ไม่ใช่สายเทคนิค">How to communicate complex findings effectively to non-technical stakeholders.</p>
                     </li>
                     <li class="blog-item">
-                        <span class="date">Aug 05, 2025</span>
-                        <h3><a href="#">SQL Best Practices for Large Scale Data Analysis</a></h3>
-                        <p>Tips for writing efficient and readable SQL queries for massive datasets.</p>
+                        <span class="date" data-en="Aug 05, 2025" data-th="05 ส.ค. 2025">Aug 05, 2025</span>
+                        <h3><a href="#" data-en="SQL Best Practices for Large Scale Data Analysis" data-th="แนวทางปฏิบัติที่ดีที่สุดของ SQL สำหรับการวิเคราะห์ข้อมูลขนาดใหญ่">SQL Best Practices for Large Scale Data Analysis</a></h3>
+                        <p data-en="Tips for writing efficient and readable SQL queries for massive datasets." data-th="เคล็ดลับในการเขียนแบบสอบถาม SQL ที่มีประสิทธิภาพและอ่านง่ายสำหรับชุดข้อมูลมหาศาล">Tips for writing efficient and readable SQL queries for massive datasets.</p>
                     </li>
                     <li class="blog-item">
-                        <span class="date">Jun 20, 2025</span>
-                        <h3><a href="#">Why Python is Essential for the Modern Data Analyst</a></h3>
-                        <p>Exploring the powerful ecosystem of libraries that make Python a must-have skill.</p>
+                        <span class="date" data-en="Jun 20, 2025" data-th="20 มิ.ย. 2025">Jun 20, 2025</span>
+                        <h3><a href="#" data-en="Why Python is Essential for the Modern Data Analyst" data-th="ทำไม Python ถึงจำเป็นสำหรับนักวิเคราะห์ข้อมูลยุคใหม่">Why Python is Essential for the Modern Data Analyst</a></h3>
+                        <p data-en="Exploring the powerful ecosystem of libraries that make Python a must-have skill." data-th="สำรวจระบบนิเวศที่ทรงพลังของไลบรารีที่ทำให้ Python เป็นทักษะที่ต้องมี">Exploring the powerful ecosystem of libraries that make Python a must-have skill.</p>
                     </li>
                 </ul>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2026 Your Name. Built with HTML, CSS, and JS.</p>
+            <p data-en="&copy; 2026 Your Name. Built with HTML, CSS, and JS." data-th="&copy; 2026 ชื่อของคุณ สร้างด้วย HTML, CSS และ JS.">&copy; 2026 Your Name. Built with HTML, CSS, and JS.</p>
         </footer>
     </div>
     <script src="js/main.js"></script>

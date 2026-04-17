@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Data Analyst Portfolio</title>
+    <title data-en="Your Name | Data Analyst Portfolio" data-th="ชื่อของคุณ | พอร์ตโฟลิโอแนะแนวข้อมูล">Your Name | Data Analyst Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Inline script to prevent theme flash -->
     <script>
         (function() {
@@ -16,6 +16,8 @@
                 if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.documentElement.classList.add('dark');
                 }
+                var lang = localStorage.getItem('portfolio-lang') || 'en';
+                document.documentElement.setAttribute('lang', lang);
             } catch (e) {}
         })();
     </script>
@@ -24,16 +26,19 @@
     <div class="container">
         <header>
             <div class="nav-container">
-                <h1>YOUR NAME</h1>
+                <h1 data-en="YOUR NAME" data-th="ชื่อของคุณ">YOUR NAME</h1>
                 <div class="right-nav">
                     <nav>
                         <ul>
-                            <li><a href="index.html" class="active">About</a></li>
-                            <li><a href="projects.html">Projects</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="index.html" class="active" data-en="About" data-th="เกี่ยวกับ">About</a></li>
+                            <li><a href="projects.html" data-en="Projects" data-th="โปรเจกต์">Projects</a></li>
+                            <li><a href="blog.html" data-en="Blog" data-th="บล็อก">Blog</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-th="ติดต่อ">Contact</a></li>
                         </ul>
                     </nav>
+                    <button id="lang-toggle" class="lang-toggle" aria-label="Switch Language">
+                        EN / TH
+                    </button>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                         <!-- Moon Icon -->
                         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -50,44 +55,62 @@
 
         <main>
             <section class="hero">
-                <h2>I turn complex data into actionable insights.</h2>
-                <p class="lead">Data Analyst based in [Your City]. Specialized in SQL, Python, and data storytelling to drive business decisions.</p>
+                <h2 data-en="I turn complex data into actionable insights." data-th="เปลี่ยนข้อมูลที่ซับซ้อนให้กลายเป็นข้อมูลเชิงลึกที่นำไปใช้งานได้จริง">I turn complex data into actionable insights.</h2>
+                <p class="lead" data-en="Data Analyst based in [Your City]. Specialized in SQL, Python, and data storytelling to drive business decisions." data-th="นักวิเคราะห์ข้อมูล (Data Analyst) ประจำ [เมืองของคุณ] ผู้เชี่ยวชาญด้าน SQL, Python และการนำเสนอข้อมูล (Data Storytelling) เพื่อขับเคลื่อนการตัดสินใจทางธุรกิจ">Data Analyst based in [Your City]. Specialized in SQL, Python, and data storytelling to drive business decisions.</p>
             </section>
 
             <section id="about">
-                <h2>About Me</h2>
-                <p>Hello! I'm a Data Analyst with a background in [Your Background]. I have a passion for uncovering trends and patterns within large datasets and communicating findings to both technical and non-technical stakeholders.</p>
-                <p>My toolkit includes SQL for data extraction, Python (Pandas, NumPy, Scikit-learn) for analysis and modeling, and visualization tools like Tableau and Power BI.</p>
+                <h2 data-en="About Me" data-th="เกี่ยวกับฉัน">About Me</h2>
+                <p data-en="Hello! I'm a Data Analyst with a background in [Your Background]. I have a passion for uncovering trends and patterns within large datasets and communicating findings to both technical and non-technical stakeholders." data-th="สวัสดีครับ! ผมเป็นนักวิเคราะห์ข้อมูลที่มีพื้นฐานมาจาก [ภูมิหลังของคุณ] ผมมีความหลงใหลในการค้นหาแนวโน้มและรูปแบบภายในชุดข้อมูลขนาดใหญ่ และสื่อสารสิ่งที่ค้นพบให้กับผู้ที่มีส่วนได้ส่วนเสียทั้งในสายเทคนิคและไม่ใช่สายเทคนิค">Hello! I'm a Data Analyst with a background in [Your Background]. I have a passion for uncovering trends and patterns within large datasets and communicating findings to both technical and non-technical stakeholders.</p>
+                <p data-en="My toolkit includes SQL for data extraction, Python (Pandas, NumPy, Scikit-learn) for analysis and modeling, and visualization tools like Tableau and Power BI." data-th="เครื่องมือที่ผมใช้ประกอบด้วย SQL สำหรับการดึงข้อมูล, Python (Pandas, NumPy, Scikit-learn) สำหรับการวิเคราะห์และสร้างแบบจำลอง และเครื่องมือสร้างภาพข้อมูล เช่น Tableau และ Power BI">My toolkit includes SQL for data extraction, Python (Pandas, NumPy, Scikit-learn) for analysis and modeling, and visualization tools like Tableau and Power BI.</p>
+            </section>
+
+            <section id="education">
+                <h2 data-en="Education" data-th="การศึกษา">Education</h2>
+                
+                <div class="resume-item">
+                    <span class="date">2018 — 2022</span>
+                    <h3 data-en="Bachelor of Science in [Your Major]" data-th="วิทยาศาสตรบัณฑิต สาขา [วิชาเอกของคุณ]">Bachelor of Science in [Your Major]</h3>
+                    <span class="role" data-en="University of the Thai Chamber of Commerce (UTCC)" data-th="มหาวิทยาลัยหอการค้าไทย (UTCC)">University of the Thai Chamber of Commerce (UTCC)</span>
+                    <p data-en="Graduated with honors. Focused on [Relevant Coursework/Projects]." data-th="สำเร็จการศึกษาด้วยเกียรตินิยม เน้นหนักในด้าน [วิชาที่เกี่ยวข้อง/โปรเจกต์]">Graduated with honors. Focused on [Relevant Coursework/Projects].</p>
+                </div>
+
+                <div class="resume-item">
+                    <span class="date">2012 — 2018</span>
+                    <h3 data-en="High School Diploma" data-th="วุฒิการศึกษาระดับมัธยมปลาย">High School Diploma</h3>
+                    <span class="role" data-en="[Your High School Name]" data-th="[ชื่อโรงเรียนมัธยมของคุณ]">[Your High School Name]</span>
+                    <p data-en="Focused on Science and Mathematics." data-th="เน้นการเรียนสายวิทยาศาสตร์และคณิตศาสตร์">Focused on Science and Mathematics.</p>
+                </div>
             </section>
 
             <section id="experience">
-                <h2>Experience</h2>
+                <h2 data-en="Experience" data-th="ประสบการณ์การทำงาน">Experience</h2>
                 
                 <div class="resume-item">
                     <span class="date">2022 — Present</span>
-                    <h3>Senior Data Analyst</h3>
-                    <span class="role">Retail Insights Corp.</span>
-                    <p>Optimized supply chain operations by identifying bottlenecks through predictive modeling, resulting in a 15% reduction in logistics costs. Developed automated dashboards used by executive leadership for daily decision-making.</p>
+                    <h3 data-en="Senior Data Analyst" data-th="นักวิเคราะห์ข้อมูลอาวุโส">Senior Data Analyst</h3>
+                    <span class="role" data-en="Retail Insights Corp." data-th="บริษัท รีเทล อินไซต์ คอร์ป">Retail Insights Corp.</span>
+                    <p data-en="Optimized supply chain operations by identifying bottlenecks through predictive modeling, resulting in a 15% reduction in logistics costs. Developed automated dashboards used by executive leadership for daily decision-making." data-th="ปรับปรุงการดำเนินงานของซัพพลายเชนโดยการระบุจุดคอขวดผ่านการสร้างแบบจำลองเชิงคาดการณ์ ส่งผลให้ต้นทุนด้านโลจิสติกส์ลดลง 15% พัฒนาแดชบอร์ดอัตโนมัติที่ผู้บริหารใช้สำหรับการตัดสินใจรายวัน">Optimized supply chain operations by identifying bottlenecks through predictive modeling, resulting in a 15% reduction in logistics costs. Developed automated dashboards used by executive leadership for daily decision-making.</p>
                 </div>
 
                 <div class="resume-item">
                     <span class="date">2020 — 2022</span>
-                    <h3>Data Analyst</h3>
-                    <span class="role">FinTech Solutions</span>
-                    <p>Analyzed customer behavior data to improve retention strategies. Performed A/B testing on marketing campaigns, leading to a 20% increase in conversion rates. Ensured data integrity across multiple financial databases.</p>
+                    <h3 data-en="Data Analyst" data-th="นักวิเคราะห์ข้อมูล">Data Analyst</h3>
+                    <span class="role" data-en="FinTech Solutions" data-th="บริษัท ฟินเทค โซลูชันส์">FinTech Solutions</span>
+                    <p data-en="Analyzed customer behavior data to improve retention strategies. Performed A/B testing on marketing campaigns, leading to a 20% increase in conversion rates. Ensured data integrity across multiple financial databases." data-th="วิเคราะห์ข้อมูลพฤติกรรมลูกค้าเพื่อปรับปรุงกลยุทธ์การรักษาลูกค้า ทำการทดสอบ A/B ในแคมเปญการตลาด ส่งผลให้มีอัตราการเปลี่ยนแปลงเพิ่มขึ้น 20% ตรวจสอบความถูกต้องของข้อมูลในฐานข้อมูลทางการเงินหลายแห่ง">Analyzed customer behavior data to improve retention strategies. Performed A/B testing on marketing campaigns, leading to a 20% increase in conversion rates. Ensured data integrity across multiple financial databases.</p>
                 </div>
 
                 <div class="resume-item">
                     <span class="date">2018 — 2020</span>
-                    <h3>Junior Data Analyst</h3>
-                    <span class="role">Health Data Group</span>
-                    <p>Assisted in the cleaning and preparation of large healthcare datasets for clinical research. Generated weekly reports on patient outcome metrics and assisted in the migration of legacy data to a modern cloud-based warehouse.</p>
+                    <h3 data-en="Junior Data Analyst" data-th="นักวิเคราะห์ข้อมูลรุ่นเยาว์">Junior Data Analyst</h3>
+                    <span class="role" data-en="Health Data Group" data-th="กลุ่มข้อมูลสุขภาพ">Health Data Group</span>
+                    <p data-en="Assisted in the cleaning and preparation of large healthcare datasets for clinical research. Generated weekly reports on patient outcome metrics and assisted in the migration of legacy data to a modern cloud-based warehouse." data-th="ช่วยในการทำความสะอาดและจัดเตรียมชุดข้อมูลสุขภาพขนาดใหญ่สำหรับการวิจัยทางคลินิก สร้างรายงานประจำสัปดาห์เกี่ยวกับตัวชี้วัดผลลัพธ์ของผู้ป่วย และช่วยในการโอนย้ายข้อมูลเก่าไปยังคลังข้อมูลบนคลาวด์ที่ทันสมัย">Assisted in the cleaning and preparation of large healthcare datasets for clinical research. Generated weekly reports on patient outcome metrics and assisted in the migration of legacy data to a modern cloud-based warehouse.</p>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2026 Your Name. Built with HTML, CSS, and JS.</p>
+            <p data-en="&copy; 2026 Your Name. Built with HTML, CSS, and JS." data-th="&copy; 2026 ชื่อของคุณ สร้างด้วย HTML, CSS และ JS.">&copy; 2026 Your Name. Built with HTML, CSS, and JS.</p>
         </footer>
     </div>
     <script src="js/main.js"></script>

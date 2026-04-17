@@ -1,5 +1,6 @@
 // Theme Toggle Logic
 const themeStorageKey = 'portfolio-theme';
+const langStorageKey = 'portfolio-lang';
 
 const applyTheme = (theme) => {
     if (theme === 'dark') {
@@ -9,7 +10,21 @@ const applyTheme = (theme) => {
     }
 };
 
-// Immediately check for saved theme
+const applyLanguage = (lang) => {
+    document.documentElement.setAttribute('lang', lang);
+    const translatableElements = document.querySelectorAll('[data-en][data-th]');
+    translatableElements.forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+    });
+    
+    // Update document title
+    const titleEl = document.querySelector('title[data-en][data-th]');
+    if (titleEl) {
+        document.title = titleEl.getAttribute(`data-${lang}`);
+    }
+};
+
+// Immediately check for saved theme and language
 try {
     const savedTheme = localStorage.getItem(themeStorageKey);
     if (savedTheme) {
@@ -17,30 +32,45 @@ try {
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         applyTheme('dark');
     }
+
+    const savedLang = localStorage.getItem(langStorageKey) || 'en';
+    applyLanguage(savedLang);
 } catch (e) {
-    console.warn('LocalStorage not accessible during initial theme check:', e);
+    console.warn('LocalStorage not accessible during initial check:', e);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Portfolio website loaded. Checking for theme toggle...');
+    console.log('Portfolio website loaded.');
     
     const themeToggle = document.getElementById('theme-toggle');
+    const langToggle = document.getElementById('lang-toggle');
     
     if (themeToggle) {
-        console.log('Theme toggle button found.');
         themeToggle.addEventListener('click', () => {
             const isDarkMode = document.documentElement.classList.toggle('dark');
             const theme = isDarkMode ? 'dark' : 'light';
             
             try {
                 localStorage.setItem(themeStorageKey, theme);
-                console.log('Theme changed to:', theme);
             } catch (e) {
                 console.error('Could not save theme preference:', e);
             }
         });
-    } else {
-        console.warn('Theme toggle button NOT found on this page.');
+    }
+
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            const currentLang = document.documentElement.getAttribute('lang') || 'en';
+            const newLang = currentLang === 'en' ? 'th' : 'en';
+            
+            applyLanguage(newLang);
+            
+            try {
+                localStorage.setItem(langStorageKey, newLang);
+            } catch (e) {
+                console.error('Could not save language preference:', e);
+            }
+        });
     }
 
     // Smooth scrolling for anchor links
